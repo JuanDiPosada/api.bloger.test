@@ -10,22 +10,23 @@ use Illuminate\Http\Request;
 class AreaController extends Controller
 {
     public function index(){
-        $areas= Area::all();
-        return view('area.index',compact('areas'));
+        $areas= Area::included()->filter()->get();
+        return response()->json($areas);
     }
-    public function create(){
+    /* public function create(){
         return view('area.create');
-    }
+    } */
     public function store(Request $request){
         $area=area::create($request->all());
 
-        return redirect()->route('area.index');
+        return response()->json($area);
     }
+
      public function show($id)
     {
         $area = Area::find($id);
 
-        return view('area.show', compact('area'));
+        return response()->json($area);
     }
 
      //Destroy
@@ -33,22 +34,22 @@ class AreaController extends Controller
 
         $area->delete();
 
-        return redirect()->route('area.index');
+        return response()->json($area);
     }
 
-      public function edit(Area $area){
+      /* public function edit(Area $area){
 
         return view('area.edit',compact('area'));
 
-      }
+      } */
 
      //Update
-    public function update(Request $request, Area $area){
+    /* public function update(Request $request, Area $area){
 
         $area->update($request->all());
 
         return redirect()->route('area.index');
 
-      }
+      } */
 
 }

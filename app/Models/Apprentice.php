@@ -13,6 +13,8 @@ class Apprentice extends Model
 
     protected $allowIncluded=['computer','course'];
 
+    protected $allowFilter=['name','email','cell_number'];
+
 
     public function computer(){
         return $this->belongsTo(Computer::class);
