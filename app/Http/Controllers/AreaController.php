@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class AreaController extends Controller
 {
     public function index(){
-        $areas= Area::included()->filter()->get();
+        $areas= Area::included()->filter()->sort()->getOrPaginate();
         return response()->json($areas);
     }
     /* public function create(){

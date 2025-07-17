@@ -24,8 +24,8 @@ return new class extends Migration
                 ->on('areas')
                 ->onDelete('set null');
 
-            $table->unsignedBigInteger('TrainingCenter_id')->nullable();
-            $table->foreign('trainingCenter_id')
+            $table->unsignedBigInteger('training_center_id')->nullable();
+            $table->foreign('training_center_id')
                 ->references('id')
                 ->on('training_centers')
                 ->onDelete('set null');

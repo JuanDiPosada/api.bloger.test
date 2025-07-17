@@ -12,7 +12,7 @@ use function Pest\Laravel\get;
 class CourseController extends Controller
 {
     public function index() {
-        $courses=course::included()->filter()->get();
+        $courses=course::included()->filter()->sort()->getOrPaginate();
 
         return response()->json($courses);
     }

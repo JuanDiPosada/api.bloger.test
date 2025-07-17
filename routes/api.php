@@ -6,7 +6,6 @@ use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TrainingCenterController;
-use App\Models\TrainingCenter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

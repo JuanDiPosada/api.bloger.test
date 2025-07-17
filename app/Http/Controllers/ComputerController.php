@@ -9,7 +9,7 @@ class ComputerController extends Controller
 {
     public function index()  {
         /* $computers=Computer::included()->get(); */
-        $computers=Computer::included()->filter()->get();
+        $computers=Computer::included()->filter()->sort()->getOrPaginate();
 
         return response()->json($computers);
     }

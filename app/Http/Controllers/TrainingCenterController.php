@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TrainingCenterController extends Controller
 {
     public function index()  {
-        $trainingCenters=TrainingCenter::included()->filter()->get();
+        $trainingCenters=TrainingCenter::included()->filter()->sort()->getOrPaginate();;
 
         return response()->json($trainingCenters);
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('cell_number');
+            $table->string('cell_number',25);
             $table->unsignedBigInteger('course_id')->nullable();
             $table->foreign('course_id')
                 ->references('id')

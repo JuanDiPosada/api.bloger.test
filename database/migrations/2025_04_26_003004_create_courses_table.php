@@ -23,8 +23,8 @@ return new class extends Migration
                 ->on('areas')
                 ->onDelete('set null');
 
-            $table->unsignedBigInteger('trainingCenter_id')->nullable();
-            $table->foreign('trainingCenter_id')->references('id')->on('training_centers')->onDelete('set null');
+            $table->unsignedBigInteger('training_center_id')->nullable();
+            $table->foreign('training_center_id')->references('id')->on('training_centers')->onDelete('set null');
 
             $table->timestamps();
         });
